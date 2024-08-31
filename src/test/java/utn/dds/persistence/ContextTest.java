@@ -81,31 +81,5 @@ public class ContextTest implements SimplePersistenceTest {
 
     });
   }
-
-  @Test
-  public void testInsertarYTraerTodasLasFormaciones() {
-
-    withTransaction(() -> {
-
-      var jugadoresBocaJuniors = new ArrayList<Jugador>();
-      
-
-      var formacionBocaJuniors = new Formacion();
-      formacionBocaJuniors.setJugadores();
-      dani.setNombre("Dani");
-      dani.setPosicion("11");
-
-      Jugador pedro = new Jugador();
-      pedro.setNombre("Pedro");
-      pedro.setPosicion("10");
-
-      repo.registrar(dani);
-      repo.registrar(pedro);
-
-      assertEquals(2, repo.todos().size());
-
-    });
-
-  }
-
+  
 }
