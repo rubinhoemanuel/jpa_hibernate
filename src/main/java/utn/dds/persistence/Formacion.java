@@ -28,6 +28,10 @@ public class Formacion {
   private Equipo equipo;
 
   @ManyToMany
+  @JoinTable(
+      name = "formaciones_jugadores",
+      joinColumns = @JoinColumn(name = "formacion_id"),
+      inverseJoinColumns = @JoinColumn(name = "jugador_id"))
   private List<Jugador> jugadores = new ArrayList<Jugador>();
 
 }
